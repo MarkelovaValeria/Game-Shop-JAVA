@@ -1,0 +1,62 @@
+services:
+
+  mysql:
+    image: mysql:8.3.0
+    container_name: mysql
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql
+    volumes:
+      - ./infrastructure/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./docker/mysql/data:/var/lib/mysql
+    networks:
+      - eshop-network
+  games-service:
+    image: games-service
+    build:
+      context: ./games_service
+      dockerfile: Dockerfile
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_USER: root
+      MYSQL_PASSWORD: Edem78s3
+      MYSQL_PORT: 3306
+    ports:
+      - "8081:8081"
+    depends_on:
+      - mysql
+    networks:
+      - eshop-network
+  shoppingcart-service:
+    image: shoppingcart-service
+    build:
+      context: ./shoppingCart_service
+      dockerfile: Dockerfile
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_USER: root
+      MYSQL_PASSWORD: Edem78s3
+      MYSQL_PORT: 3306
+    ports:
+      - "8082:8082"
+    depends_on:
+      - mysql
+    networks:
+      - eshop-network
+
+  api-gateway-service:
+    image: api-gateway-service
+    build:
+      context: ./demo
+      dockerfile: Dockerfile
+    environment:
+      CATALOG_URL: http://games-service:8081
+      SHOPPINGCART_URL: http://shoppingcart-service:8082
+    ports:
+      - "9000:9000"
+    networks:
+      - eshop-network
+networks:
+  eshop-network:
+    driver: bridge

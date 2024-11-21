@@ -9,5 +9,5 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(value = "games-service", url = "${game.url}")
 public interface GamesClient {
     @RequestMapping(method = RequestMethod.GET, value = "/api/catalog")
-    boolean isGame(@RequestParam Long Id);
+    boolean isGame(@RequestParam Long id);
 }

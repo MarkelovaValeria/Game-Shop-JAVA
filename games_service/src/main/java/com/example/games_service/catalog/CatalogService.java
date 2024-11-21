@@ -15,18 +15,18 @@ public class CatalogService {
         gamesRepository.save(game);
     }
 
-    public boolean GetGame(Long Id){
-        var isGame = gamesRepository.findById(Id);
-        return isGame.isPresent();
+    public boolean getGame(Long id){
+        return gamesRepository.findById(id).isPresent();
+        //або return gameRepository.existsById(Id);
     }
 
     private static  Games mapToGame(GameRequest gameRequest){
         Games games = new Games();
         games.setTitle(gameRequest.title());
-        games.setDescription_game(gameRequest.description_game());
+        games.setDescriptionGame(gameRequest.descriptionGame());
         games.setDeveloper(gameRequest.developer());
         games.setPublisher(gameRequest.publisher());
-        games.setRelease_date(gameRequest.release_date());
+        games.setReleaseDate(gameRequest.releaseDate());
         games.setPrice(gameRequest.price());
         games.setRating(gameRequest.rating());
         games.setCategories(gameRequest.categories());

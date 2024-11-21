@@ -1,4 +1,4 @@
-package com.example.shoppingCart_service;
+package com.example.shoppingCart_service.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -17,6 +17,6 @@ public class ShoppingCart {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long game_id;
-    private Long user_id;
+    private Long gameId;
+    private Long userId;
 }

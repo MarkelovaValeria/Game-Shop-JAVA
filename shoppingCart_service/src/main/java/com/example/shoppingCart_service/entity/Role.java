@@ -1,5 +1,6 @@
-package com.example.shoppingCart_service;
+package com.example.shoppingCart_service.entity;
 
+import com.example.shoppingCart_service.entity.Users;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

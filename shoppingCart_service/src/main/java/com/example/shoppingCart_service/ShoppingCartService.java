@@ -1,6 +1,7 @@
 package com.example.shoppingCart_service;
 
 
+import com.example.shoppingCart_service.entity.ShoppingCart;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -15,7 +16,7 @@ public class ShoppingCartService {
     private final GamesClient gamesClient;
 
     public void placeOrder(ShoppingCartRequest shoppingCartRequest){
-        boolean isGame = gamesClient.isGame(shoppingCartRequest.game_id());
+        boolean isGame = gamesClient.isGame(shoppingCartRequest.gameId());
         if(isGame) {
             var item = mapToItem(shoppingCartRequest);
             shoppingCartRepository.save(item);
@@ -27,8 +28,8 @@ public class ShoppingCartService {
 
     private static ShoppingCart mapToItem(ShoppingCartRequest shoppingCartRequest){
         ShoppingCart shoppingCart = new ShoppingCart();
-        shoppingCart.setUser_id(shoppingCartRequest.users_id());
-        shoppingCart.setGame_id(shoppingCartRequest.game_id());
+        shoppingCart.setUserId(shoppingCartRequest.usersId());
+        shoppingCart.setGameId(shoppingCartRequest.gameId());
         return shoppingCart;
     }
 }

@@ -18,7 +18,7 @@ public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name_category;
+    private String nameCategory;
     @ManyToMany(mappedBy = "categories")
     private Set<Games> games;
 }

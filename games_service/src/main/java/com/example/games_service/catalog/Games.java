@@ -21,10 +21,10 @@ public class Games {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
-    private String description_game;
+    private String descriptionGame;
     private String developer;
     private String publisher;
-    private LocalDate release_date;
+    private LocalDate releaseDate;
     private BigDecimal price;
     private Integer rating;
     @ManyToMany

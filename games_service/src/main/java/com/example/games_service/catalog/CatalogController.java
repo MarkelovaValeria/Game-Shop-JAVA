@@ -19,7 +19,7 @@ public class CatalogController {
     }
 
     @GetMapping
-    public boolean isGame(@RequestParam Long Id){
-        return catalogService.GetGame(Id);
+    public boolean isGame(@RequestParam Long id){
+        return catalogService.getGame(id);
     }
 }

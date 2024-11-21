@@ -1,5 +1,8 @@
-package com.example.games_service.catalog;
+package com.example.games_service.businessLogicalLayer.services;
 
+import com.example.games_service.businessLogicalLayer.dto.request.GameRequest;
+import com.example.games_service.dataAccessLayer.repositories.GamesRepository;
+import com.example.games_service.dataAccessLayer.entity.Games;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -20,7 +23,7 @@ public class CatalogService {
         //або return gameRepository.existsById(Id);
     }
 
-    private static  Games mapToGame(GameRequest gameRequest){
+    private static Games mapToGame(GameRequest gameRequest){
         Games games = new Games();
         games.setTitle(gameRequest.title());
         games.setDescriptionGame(gameRequest.descriptionGame());

@@ -1,5 +1,6 @@
-package com.example.shoppingCart_service;
+package com.example.shoppingCart_service.businessLogicalLayer.controllers;
 
+import com.example.shoppingCart_service.businessLogicalLayer.dto.requests.ShoppingCartRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

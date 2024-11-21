@@ -1,4 +1,4 @@
-package com.example.games_service.catalog;
+package com.example.games_service.dataAccessLayer.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

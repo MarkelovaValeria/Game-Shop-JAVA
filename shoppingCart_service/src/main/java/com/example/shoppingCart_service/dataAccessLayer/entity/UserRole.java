@@ -1,5 +1,4 @@
-package com.example.games_service.catalog;
-
+package com.example.shoppingCart_service.dataAccessLayer.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -8,21 +7,21 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name="t_categoryGame")
+@Table(name = "t_userRole")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class CategoryGame {
+public class UserRole {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name="category_id", nullable = false)
-    private Category category;
+    @JoinColumn(name="user_id", nullable = false)
+    private Users users;
 
     @ManyToOne
-    @JoinColumn(name="game_id", nullable = false)
-    private Games games;
+    @JoinColumn(name="role_id", nullable = false)
+    private Role role;
 }

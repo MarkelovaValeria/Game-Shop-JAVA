@@ -1,7 +1,10 @@
-package com.example.shoppingCart_service;
+package com.example.shoppingCart_service.businessLogicalLayer.services;
 
 
-import com.example.shoppingCart_service.entity.ShoppingCart;
+import com.example.shoppingCart_service.clients.GamesClient;
+import com.example.shoppingCart_service.businessLogicalLayer.dto.requests.ShoppingCartRequest;
+import com.example.shoppingCart_service.dataAccessLayer.entity.ShoppingCart;
+import com.example.shoppingCart_service.dataAccessLayer.repositories.ShoppingCartRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

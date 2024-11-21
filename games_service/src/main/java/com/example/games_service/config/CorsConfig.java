@@ -1,4 +1,4 @@
-package com.example.games_service.catalog.config;
+package com.example.games_service.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

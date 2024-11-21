@@ -1,4 +1,4 @@
-package com.example.shoppingCart_service.entity;
+package com.example.shoppingCart_service.dataAccessLayer.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

@@ -1,4 +1,6 @@
-package com.example.games_service.catalog;
+package com.example.games_service.businessLogicalLayer.dto.request;
+
+import com.example.games_service.dataAccessLayer.entity.Category;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;

@@ -1,4 +1,4 @@
-package com.example.shoppingCart_service.entity;
+package com.example.shoppingCart_service.dataAccessLayer.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -7,21 +7,16 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "t_userRole")
+@Table(name = "t_shoppingCart")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserRole {
+public class ShoppingCart {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name="user_id", nullable = false)
-    private Users users;
-
-    @ManyToOne
-    @JoinColumn(name="role_id", nullable = false)
-    private Role role;
+    private Long gameId;
+    private Long userId;
 }

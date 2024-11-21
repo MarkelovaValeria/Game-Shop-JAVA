@@ -1,5 +1,7 @@
-package com.example.games_service.catalog;
+package com.example.games_service.businessLogicalLayer.controllers;
 
+import com.example.games_service.businessLogicalLayer.dto.request.GameRequest;
+import com.example.games_service.businessLogicalLayer.services.CatalogService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

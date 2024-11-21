@@ -1,4 +1,4 @@
-package com.example.games_service.catalog.config;
+package com.example.games_service.config;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;

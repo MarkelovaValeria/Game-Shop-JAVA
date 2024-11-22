@@ -1,5 +1,6 @@
 package com.example.demo;
 
+
 import org.springframework.cloud.gateway.server.mvc.handler.GatewayRouterFunctions;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,7 +18,7 @@ public class Routes {
     public RouterFunction<ServerResponse> catalogServiceRoute() {
         return route("games_service")
                 .route(RequestPredicates.path("/api/catalog"), http(
-                        "http://localhost:8081"))
+                        "http://games-service:8081"))
                 .build();
     }
 
@@ -33,7 +34,7 @@ public class Routes {
     public RouterFunction<ServerResponse> shoppingCartServiceRoute() {
         return route("shoppingCart_service")
                 .route(RequestPredicates.path("/api/shoppingCart"), http(
-                        "http://localhost:8082"))
+                        "http://shoppingcart-service:8082"))
                 .build();
     }
 

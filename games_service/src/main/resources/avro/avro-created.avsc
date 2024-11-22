@@ -1,0 +1,8 @@
+{
+  "type": "record",
+  "name": "CatalogPlacedEvent",
+  "namespace": "com.example.games_services.event",
+  "fields": [
+  { "name": "gameNumber", "type": "string" }
+  ]
+}
